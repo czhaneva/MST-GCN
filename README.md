@@ -11,7 +11,7 @@ This is the official implemntation for "Multi-scale spatial temporal graph convo
 - Generate the bone data with `python data_gen/gen_bone_data.py`
 - Generate the motion data with `python data_gen/gen_motion_data.py`
 ### Kinetics-Skeleton
-- Download the data from [GoogleDrive](https://drive.google.com/drive/folders/1SPQ6FmFsjGg3f59uCWfdUWI-5HJM_YhZ) provided by [st-gcn](https://github.com/yysijie/st-gcn/blob/master)
+- Download the data from [GoogleDrive](https://drive.google.com/drive/folders/1SPQ6FmFsjGg3f59uCWfdUWI-5HJM_YhZ) provided by [st-gcn](https://github.com/yysijie/st-gcn)
 - Preprocess the data with `python data_gen/kinetics_gendata.py`
 - Generate the bone data with `python data_gen/gen_bone_data.py`
 - Generate the motion data with `python data_gen/gen_motion_data.py`
@@ -43,7 +43,7 @@ Please cite our paper if you find this repository useful in your resesarch:
 
 ## Acknowledgement
 The framework of our code is extended from the following repositories. We sincerely thank the authors for releasing the codes.
-- The framework of our code is based on [st-gcn](https://github.com/yysijie/st-gcn/blob/master) and [2s-agcn](https://github.com/lshiwjx/2s-AGCN).
+- The framework of our code is based on [st-gcn](https://github.com/yysijie/st-gcn) and [2s-agcn](https://github.com/lshiwjx/2s-AGCN).
 
 ## Licence
 
