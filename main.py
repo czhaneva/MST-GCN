@@ -110,7 +110,7 @@ def get_parser():
     parser.add_argument('--model', default=None, help='the model will be used')
     parser.add_argument(
         '--model-args',
-        type=dict,va
+        type=dict,
         default=dict(),
         help='the arguments of model')
     parser.add_argument(
@@ -402,7 +402,7 @@ class Processor():
                 timer['dataloader'] += self.split_time()
 
             # forward
-            output = self.model(data)
+            features, output = self.model(data)
             # if batch_idx == 0 and epoch == 0:
             #     self.train_writer.add_graph(self.model, output)
             if isinstance(output, tuple):

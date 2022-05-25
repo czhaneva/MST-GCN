@@ -1,10 +1,10 @@
-work_dir: work_dir/AEMST_GCN/stcja/MS_Basic_ss4_ts4_c112_tk9_relu/lr_0.15_50_70_90_4gpus/ntu_agcn_xview_mstgcn_bone
-model_saved_name: runs/AEMST_GCN/stcja/MS_Basic_ss4_ts4_c112_tk9_relu/lr_0.15_50_70_90_4gpus/ntu_agcn_xview_mstgcn_bone
+work_dir: work_dir/AEMST_GCN/stcja/MS_Basic_ss4_ts4_c112_tk9_relu/lr_0.15_50_70_90_4gpus/ntu_agcn_xview_mstgcn_joint
+model_saved_name: runs/AEMST_GCN/stcja/MS_Basic_ss4_ts4_c112_tk9_relu/lr_0.15_50_70_90_4gpus/ntu_agcn_xview_mstgcn_joint
 # feeder
 feeder: feeders.feeder.Feeder
 train_feeder_args:
-  data_path: data/ntu_agcn/xview/train_data_bone.npy
-  label_path: data/ntu_agcn/xview/train_label.pkl
+  data_path: data/ntu/xview/train_data_joint.npy
+  label_path: data/ntu/xview/train_label.pkl
   debug: False
   random_choose: False
   random_shift: False
@@ -13,8 +13,8 @@ train_feeder_args:
   normalization: False
 
 test_feeder_args:
-  data_path: data/ntu_agcn/xview/val_data_bone.npy
-  label_path: data/ntu_agcn/xview/val_label.pkl
+  data_path: data/ntu/xview/val_data_joint.npy
+  label_path: data/ntu/xview/val_label.pkl
 
 # model
 model: model.AEMST_GCN.Model
