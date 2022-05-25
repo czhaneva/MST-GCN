@@ -1,8 +1,6 @@
 # MST-GCN
 This is the official implemntation for "Multi-scale spatial temporal graph convolutional network for skeleton-based action recognition" AAAI-2021
 
-![](./resources/MS-GC.pdf)
-
 ## Requirements
   ![Python >=3.6.7](https://img.shields.io/badge/Python->=3.6.7-yellow.svg)    ![PyTorch >=1.2.0](https://img.shields.io/badge/PyTorch->=1.2.0-blue.svg)     ![CUDA >=10.0.130](https://img.shields.io/badge/CUDA->=10.0.130-blue.svg)
 
@@ -24,6 +22,8 @@ Change the config file depending on what you want.
 ```bash
 # train on NTU RGB+D xview joint stream
 $ sh run.sh 0,1,2,3 4 2022 0
+# or
+$ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 --master_port=2022 main.py --config config/ntu/train_joint_amstgcn_ntu.yaml
 ```
 
 ## Citation
@@ -49,3 +49,5 @@ The framework of our code is extended from the following repositories. We sincer
 
 This project is licensed under the terms of the MIT license.
 
+## Contact
+For any questions, feel free to contact: `zhanchen_cz@pku.edu.cn` or `czchenzhan@gmail.com`
