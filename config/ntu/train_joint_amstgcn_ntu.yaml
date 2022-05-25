@@ -1,0 +1,58 @@
+work_dir: work_dir/AEMST_GCN/stcja/MS_Basic_ss4_ts4_c112_tk9_relu/lr_0.15_50_70_90_4gpus/ntu_agcn_xview_mstgcn_bone
+model_saved_name: runs/AEMST_GCN/stcja/MS_Basic_ss4_ts4_c112_tk9_relu/lr_0.15_50_70_90_4gpus/ntu_agcn_xview_mstgcn_bone
+# feeder
+feeder: feeders.feeder.Feeder
+train_feeder_args:
+  data_path: data/ntu_agcn/xview/train_data_bone.npy
+  label_path: data/ntu_agcn/xview/train_label.pkl
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: -1
+  normalization: False
+
+test_feeder_args:
+  data_path: data/ntu_agcn/xview/val_data_bone.npy
+  label_path: data/ntu_agcn/xview/val_label.pkl
+
+# model
+model: model.AEMST_GCN.Model
+model_args:
+  num_class: 60
+  num_point: 25
+  num_person: 2
+  block_args: [[3, 112, False, 1], 
+               [112, 112, True, 1], [112, 112, True, 1], [112, 112, True, 1],
+               [112, 224, True, 2], [224, 224, True, 1], [224, 224, True, 1],
+               [224, 448, True, 2], [448, 448, True, 1], [448, 448, True, 1]]
+  graph: graph.ntu_rgb_d.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+  kernel_size: 9
+  block_type: 'ms'
+  reduct_ratio: 2
+  expand_ratio: 0
+  s_scale: 4
+  t_scale: 4
+  layer_type: 'basic'
+  act: 'relu'
+  atten: 'None'
+  bias: True
+
+#optim
+weight_decay: 0.0001
+base_lr: 0.15
+step: [50, 70, 90]
+warm_up_epoch: 10
+
+# training
+device: [0]
+batch_size: 8
+test_batch_size: 64
+num_epoch: 110
+nesterov: True
+
+#only_train_epoch: 5
+#only_train_part: True
+

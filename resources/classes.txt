@@ -1,0 +1,120 @@
+A1. drink water. 喝水
+A2. eat meal/snack. 吃零食
+A3. brushing teeth. 刷牙
+A4. brushing hair. 梳头
+A5. drop. 丢东西
+A6. pickup. 捡起
+A7. throw. 扔
+A8. sitting down. 坐下
+A9. standing up (from sitting position). 站起
+A10. clapping. 鼓掌
+A11. reading. 读书
+A12. writing. 写字
+A13. tear up paper. 撕纸
+A14. wear jacket. 穿衣
+A15. take off jacket. 脱衣
+A16. wear a shoe. 穿鞋
+A17. take off a shoe. 脱鞋
+A18. wear on glasses. 戴眼镜
+A19. take off glasses. 摘眼镜
+A20. put on a hat/cap. 戴帽子
+A21. take off a hat/cap. 摘帽子
+A22. cheer up. 欢呼
+A23. hand waving. 挥手
+A24. kicking something. 踢
+A25. reach into pocket. 深入口袋
+A26. hopping (one foot jumping). 单脚跳
+A27. jump up. 跳跃
+A28. make a phone call/answer phone. 打电话
+A29. playing with phone/tablet. 玩手机
+A30. typing on a keyboard. 打字
+A31. pointing to something with finger. 指
+A32. taking a selfie. 自拍
+A33. check time (from watch). 看手表
+A34. rub two hands together. 揉手
+A35. nod head/bow. 鞠躬
+A36. shake head. 摇头
+A37. wipe face. 擦脸
+A38. salute. 敬礼
+A39. put the palms together. 双手合十
+A40. cross hands in front (say stop). 叉手
+A41. sneeze/cough. 咳嗽
+A42. staggering. 蹒跚
+A43. falling. 跌倒
+A44. touch head (headache). 摸头
+A45. touch chest (stomachache/heart pain). 摸胸
+A46. touch back (backache). 摸背
+A47. touch neck (neckache). 摸颈
+A48. nausea or vomiting condition. 呕吐
+A49. use a fan (with hand or paper)/feeling warm. 扇风
+A50. punching/slapping other person. 掌掴
+A51. kicking other person. 踢人
+A52. pushing other person. 推人
+A53. pat on back of other person. 拍背
+A54. point finger at the other person. 指着对方
+A55. hugging other person. 拥抱
+A56. giving something to other person. 递给对方
+A57. touch other person's pocket. 偷钱
+A58. handshaking. 握手
+A59. walking towards each other. 向对方走去
+A60. walking apart from each other. 分开地走
+A61. put on headphone.
+A62. take off headphone.
+A63. shoot at the basket.
+A64. bounce ball.
+A65. tennis bat swing.
+A66. juggling table tennis balls.
+A67. hush (quite).
+A68. flick hair.
+A69. thumb up.
+A70. thumb down.
+A71. make ok sign.
+A72. make victory sign.
+A73. staple book.
+A74. counting money.
+A75. cutting nails.
+A76. cutting paper (using scissors).
+A77. snapping fingers.
+A78. open bottle.
+A79. sniff (smell).
+A80. squat down.
+A81. toss a coin.
+A82. fold paper.
+A83. ball up paper.
+A84. play magic cube.
+A85. apply cream on face.
+A86. apply cream on hand back.
+A87. put on bag.
+A88. take off bag.
+A89. put something into a bag.
+A90. take something out of a bag.
+A91. open a box.
+A92. move heavy objects.
+A93. shake fist.
+A94. throw up cap/hat.
+A95. hands up (both hands).
+A96. cross arms.
+A97. arm circles.
+A98. arm swings.
+A99. running on the spot.
+A100. butt kicks (kick backward).
+A101. cross toe touch.
+A102. side kick.
+A103. yawn.
+A104. stretch oneself.
+A105. blow nose.
+A106. hit other person with something.
+A107. wield knife towards other person.
+A108. knock over other person (hit with body).
+A109. grab other person鈥檚 stuff.
+A110. shoot at other person with a gun.
+A111. step on foot.
+A112. high-five.
+A113. cheers and drink.
+A114. carry something with other person.
+A115. take a photo of other person.
+A116. follow other person.
+A117. whisper in other person鈥檚 ear.
+A118. exchange things with other person.
+A119. support somebody with hand.
+A120. finger-guessing game (playing rock-paper-scissors).
