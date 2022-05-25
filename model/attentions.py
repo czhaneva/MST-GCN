@@ -12,8 +12,6 @@ class Attention_Layer(nn.Module):
         __attention = {
             'stja': ST_Joint_Att,
             'stcja': STC_Joint_Att,
-            'st1ja': ST_Joint_1_Att,
-            'stc1ja': STC_Joint_1_Att,
             'pa': Part_Att,
             'ca': Channel_Att,
             'fa': Frame_Att,
@@ -54,32 +52,6 @@ class ST_Joint_Att(nn.Module):
         x_att = x_t_att * x_v_att
         return x_att
 
-class ST_Joint_1_Att(nn.Module):
-    def __init__(self, channel, reduct_ratio, bias, **kwargs):
-        super(ST_Joint_1_Att, self).__init__()
-
-        inner_channel = channel // reduct_ratio
-
-        self.fcn = nn.Sequential(
-            nn.Conv2d(channel, inner_channel, kernel_size=1, bias=bias),
-            nn.BatchNorm2d(inner_channel),
-            HardSwish(inplace=True),
-        )
-        self.conv_t = nn.Conv2d(inner_channel, 1, kernel_size=1)
-        self.conv_v = nn.Conv2d(inner_channel, 1, kernel_size=1)
-
-    def forward(self, x):
-        N, C, T, V = x.size()
-        x_t = x.mean(3, keepdims=True)
-        x_v = x.mean(2, keepdims=True).transpose(2, 3)
-        x_att = self.fcn(torch.cat([x_t, x_v], dim=2))
-        x_t, x_v = torch.split(x_att, [T, V], dim=2)
-        x_t_att = self.conv_t(x_t).sigmoid()
-        x_v_att = self.conv_v(x_v.transpose(2, 3)).sigmoid()
-        x_att = x_t_att * x_v_att
-        return x_att
-
-
 class STC_Joint_Att(nn.Module):
     def __init__(self, channel, reduct_ratio, bias, **kwargs):
         super(STC_Joint_Att, self).__init__()
@@ -112,40 +84,6 @@ class STC_Joint_Att(nn.Module):
         x_c_att = self.conv_c(x_c)
         x_att = x_t_att * x_v_att * x_c_att
         return x_att
-
-class STC_Joint_1_Att(nn.Module):
-    def __init__(self, channel, reduct_ratio, bias, **kwargs):
-        super(STC_Joint_1_Att, self).__init__()
-
-        inner_channel = channel // reduct_ratio
-
-        self.fcn = nn.Sequential(
-            nn.Conv2d(channel, inner_channel, kernel_size=1, bias=bias),
-            nn.BatchNorm2d(inner_channel),
-            HardSwish(inplace=True),
-        )
-        self.conv_t = nn.Conv2d(inner_channel, 1, kernel_size=1)
-        self.conv_v = nn.Conv2d(inner_channel, 1, kernel_size=1)
-
-        self.pooling = nn.AdaptiveAvgPool2d(1)
-        self.conv_c = nn.Sequential(
-            nn.Conv2d(inner_channel, channel, kernel_size=1),
-            nn.Sigmoid(),
-        )
-
-    def forward(self, x):
-        N, C, T, V = x.size()
-        x_t = x.mean(3, keepdims=True)  # N, C, T, 1
-        x_v = x.mean(2, keepdims=True).transpose(2, 3)  # N, C, 1, V --> N, C, V, 1
-        x_att = self.fcn(torch.cat([x_t, x_v], dim=2))  # N, C, T+V, 1
-        x_t, x_v = torch.split(x_att, [T, V], dim=2)    # N, C, T, 1; N, C, V, 1
-        x_c = (self.pooling(x_t) + self.pooling(x_v)) * 0.5     # N, C, 1, 1
-        x_t_att = self.conv_t(x_t).sigmoid()            # N, C, T, 1
-        x_v_att = self.conv_v(x_v.transpose(2, 3)).sigmoid()    # N, C, V, 1 --> N, C, 1, V
-        x_c_att = self.conv_c(x_c)
-        x_att = x_t_att * x_v_att * x_c_att
-        return x_att
-
 
 class Part_Att(nn.Module):
     def __init__(self, channel, parts, reduct_ratio, bias, **kwargs):
