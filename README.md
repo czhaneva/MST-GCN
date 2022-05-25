@@ -1,5 +1,5 @@
 # MST-GCN
-This is the official implemntation for "Multi-scale spatial temporal graph convolutional network for skeleton-based action recognition" AAAI-2021 [pdf](https://www.aaai.org/AAAI21Papers/AAAI-5287.ChenZ.pdf)
+This is the official implemntation for "Multi-scale spatial temporal graph convolutional network for skeleton-based action recognition" AAAI-2021 ([pdf])(https://www.aaai.org/AAAI21Papers/AAAI-5287.ChenZ.pdf)
 
 ## Requirements
   ![Python >=3.6.7](https://img.shields.io/badge/Python->=3.6.7-yellow.svg)    ![PyTorch >=1.2.0](https://img.shields.io/badge/PyTorch->=1.2.0-blue.svg)     ![CUDA >=10.0.130](https://img.shields.io/badge/CUDA->=10.0.130-blue.svg)
